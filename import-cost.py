@@ -97,7 +97,7 @@ class ImportCostCommand(sublime_plugin.ViewEventListener):
           sublime.Region(line.b),
           '''
             <style>html, body {margin: 0; padding:0; background-color: transparent;}</style>
-            <span style="background-color: transparent; color: %s; padding: 0 15px; font-size: .9rem; line-height: 1.3rem;"><b>%.2fkB</b> %s</span>
+            <span style="background-color: transparent; color: %s; padding: 0 15px; font-size: .9rem; line-height: 1.3rem;">// <b>%.2fkB</b> %s</span>
           ''' % (color, kb, gziptxt),
           sublime.LAYOUT_INLINE
         ))
