@@ -90,10 +90,8 @@ class ImportCostCommand(sublime_plugin.ViewEventListener):
         if kb > self.get_setting('min_size_error', 80.0):
           color = 'var(--redish)'
 
-        gziptxt = ''
-        if (self.get_setting('show_gzip', False)):
-          gzipkb = size_data['gzip'] / 1000
-          gziptxt = '<span style="color: color(%s blend(var(--background) 50%%));">- %.2fkB gzip</span>' % (color, gzipkb)
+        gzipkb = size_data['gzip'] / 1000
+        gziptxt = '<span style="color: color(%s blend(var(--background) 50%%));">- %.2fkB gzip</span>' % (color, gzipkb)
 
         phantoms.append(sublime.Phantom(
           sublime.Region(line.b),
@@ -178,4 +176,3 @@ class ImportCostCommand(sublime_plugin.ViewEventListener):
       self.base_path = check_dir
       return True
     return False
-
